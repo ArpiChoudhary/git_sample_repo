@@ -1,0 +1,167 @@
+RF BAND TESTING
+
+star-sun#show run | sec controller
+controller Cellular 0/2/0
+********************
+star-sun#cellular 0/2/0 lte technology auto
+ This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+LTE Rx Channel Number =  0
+LTE Tx Channel Number =  0
+LTE Band =  0
+LTE Bandwidth = 1.4 MHz
+Current RSSI = -72 dBm
+Current RSRP = -0 dBm
+Current RSRQ = -0 dB
+Current SNR = 0.0  dB
+Physical Cell Id = 12
+Number of nearby cells = 1
+Idx      PCI (Physical Cell Id)
+--------------------------------
+1              12
+Radio Access Technology(RAT) Preference = AUTO
+Radio Access Technology(RAT) Selected = LTE
+
+star-sun#cellular 0/2/0 lte technology lte
+ This CLI will be deprecated soon. Please use LTE band selection configuration instead.star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+LTE Rx Channel Number =  0
+LTE Tx Channel Number =  0
+LTE Band =  0
+LTE Bandwidth = 1.4 MHz
+Current RSSI = -72 dBm
+Current RSRP = -0 dBm
+Current RSRQ = -0 dB
+Current SNR = 0.0  dB
+Physical Cell Id = 12
+Number of nearby cells = 1
+Idx      PCI (Physical Cell Id)
+--------------------------------
+1              12
+Radio Access Technology(RAT) Preference = LTE (cellular <intf> lte technology will be deprecated)
+Radio Access Technology(RAT) Selected = LTE
+
+star-sun#cellular 0/2/0 lte technology umts
+ This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+Channel Number = 0
+Current Band = Unknown
+Current RSSI = -72 dBm
+Current ECIO = -2 dBm
+Radio Access Technology(RAT) Preference = UMTS (cellular <intf> lte technology will be deprecated)
+Radio Access Technology(RAT) Selected = EDGE
+
+************************all lte only
+star-sun(config-controller)#lte modem band-select all-lte-only slot 0
+star-sun(config-controller)#
+controller Cellular 0/2/0
+ lte modem band-select all-lte-only slot 0
+********************************************
+star-sun#cellular 0/2/0 lte technology auto
+Error: LTE band selection is enabled. 
+ This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+LTE Rx Channel Number =  0
+LTE Tx Channel Number =  0
+LTE Band =  0
+LTE Bandwidth = 1.4 MHz
+Current RSSI = -72 dBm
+Current RSRP = -95 dBm
+Current RSRQ = -6 dB
+Current SNR = 27.0  dB
+Physical Cell Id = 12
+Number of nearby cells = 1
+Idx      PCI (Physical Cell Id)
+--------------------------------
+1              12
+Radio Access Technology(RAT) Preference = LTE
+Radio Access Technology(RAT) Selected = LTE
+
+star-sun#cellular 0/2/0 lte technology lte
+Error: LTE band selection is enabled. 
+This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+LTE Rx Channel Number =  2000
+LTE Tx Channel Number =  65535
+LTE Band =  4
+LTE Bandwidth = 10 MHz
+Current RSSI = -72 dBm
+Current RSRP = -95 dBm
+Current RSRQ = -6 dB
+Current SNR = 27.0  dB
+Physical Cell Id = 12
+Number of nearby cells = 1
+Idx      PCI (Physical Cell Id)
+--------------------------------
+1              12
+Radio Access Technology(RAT) Preference = LTE
+Radio Access Technology(RAT) Selected = LTE
+
+star-sun#cellular 0/2/0 lte technology umts
+Error: LTE band selection is enabled. 
+ This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+LTE Rx Channel Number =  2000
+LTE Tx Channel Number =  65535
+LTE Band =  4
+LTE Bandwidth = 10 MHz
+Current RSSI = -72 dBm
+Current RSRP = -95 dBm
+Current RSRQ = -6 dB
+Current SNR = 27.0  dB
+Physical Cell Id = 12
+Number of nearby cells = 1
+Idx      PCI (Physical Cell Id)
+--------------------------------
+1              12
+Radio Access Technology(RAT) Preference = LTE
+Radio Access Technology(RAT) Selected = LTE
+
+*******************************************All non lte only
+
+star-sun(config-controller)#lte modem band-select all-nonlte-only slot 0
+controller Cellular 0/2/0
+ lte modem band-select all-nonlte-only slot 0
+star-sun#
+*************************************
+star-sun#cellular 0/2/0 lte technology auto
+Error: LTE band selection is enabled. 
+This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+Channel Number = 0
+Current Band = Unknown
+Current RSSI = -128 dBm
+Current ECIO = -2 dBm
+Radio Access Technology(RAT) Preference = AUTO
+Radio Access Technology(RAT) Selected = AUTO
+
+star-sun#cellular 0/2/0 lte technology lte
+Error: LTE band selection is enabled. 
+This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+Channel Number = 0
+Current Band = Unknown
+Current RSSI = -128 dBm
+Current ECIO = -2 dBm
+Radio Access Technology(RAT) Preference = AUTO
+Radio Access Technology(RAT) Selected = AUTO
+
+star-sun#cellular 0/2/0 lte technology umts
+Error: LTE band selection is enabled. 
+This CLI will be deprecated soon. Please use LTE band selection configuration instead.
+star-sun#show cellular 0/2/0 radio
+Radio power mode = online
+Channel Number = 0
+Current Band = Unknown
+Current RSSI = -128 dBm
+Current ECIO = -2 dBm
+Radio Access Technology(RAT) Preference = AUTO
+Radio Access Technology(RAT) Selected = AUTO
+star-sun#
